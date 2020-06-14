@@ -1,1 +1,11 @@
-<p>consumer1 works!</p>
+<app-swiper [options]="numbers" [slidesTemplate]="myTemplate"></app-swiper>
+
+<ng-template #myTemplate let-number let-index="index" let-nav="navigation">
+  <div>
+    Number is: {{ number }}
+    <br />
+    Index is: {{ index }}
+  </div>
+
+  <button (click)="nav.next()">NEXT</button>
+</ng-template>

@@ -7,10 +7,6 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  numbers = [6, 7, 8, 9];
-  @ViewChild('swiper') swiper: SwiperComponent;
 
-  next(){
-    this.swiper.nav.next();
-  }
+
 }

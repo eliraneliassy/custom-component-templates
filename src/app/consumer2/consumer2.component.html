@@ -1,1 +1,13 @@
-<p>consumer2 works!</p>
+<app-swiper [options]="options" [slidesTemplate]="myTemplate"></app-swiper>
+
+<ng-template #myTemplate let-number let-index="index" let-nav="navigation">
+  <div>
+    Number is: {{ number }}
+    <br />
+    Index is: {{ index }}
+    <br>
+    <img [src]="slides[index].imageUrl">
+  </div>
+
+  <button (click)="nav.next()">NEXT</button>
+</ng-template>

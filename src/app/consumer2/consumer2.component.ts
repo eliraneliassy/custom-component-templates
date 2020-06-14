@@ -1,3 +1,4 @@
+import { slides } from './data';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Consumer2Component implements OnInit {
 
+  slides = slides;
+  options = slides.map(x => x.num);
   constructor() { }
 
   ngOnInit(): void {

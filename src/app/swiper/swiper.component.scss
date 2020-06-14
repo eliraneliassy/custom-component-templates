@@ -2,13 +2,12 @@
   overflow-y: hidden;
   position: relative;
   .slider {
-    scroll-snap-type: x mandatory;
     display: flex;
-    -webkit-overflow-scrolling: touch;
     overflow-x: scroll;
+    scroll-snap-type: x mandatory;
     div {
       min-width: 100vw;
-      height: 100vh;
+      height: 500px;
       scroll-snap-align: start;
       text-align: center;
       display: flex;
@@ -20,7 +19,7 @@
 
   .btn {
     position: absolute;
-    top: 50vh;
+    top: 250px;
 
     &.prev {
       left: 0;

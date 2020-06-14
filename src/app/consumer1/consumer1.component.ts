@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Consumer1Component implements OnInit {
 
+  numbers = [6, 7, 8, 9, 10];
+
   constructor() { }
 
   ngOnInit(): void {
