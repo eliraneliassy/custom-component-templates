@@ -1,4 +1,5 @@
-import { Component, TemplateRef, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
+import { Component, TemplateRef, Input, Output, EventEmitter, AfterViewInit, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 
 @Component({
@@ -21,14 +22,14 @@ export class SwiperComponent implements AfterViewInit {
     prev: () => this.prev()
   };
 
-  constructor() { }
+  constructor(@Inject(DOCUMENT) private document: Document) { }
   ngAfterViewInit(): void {
     this.getSlides();
   }
 
   getSlides() {
     this.slidesPositions = [];
-    document.querySelectorAll('.slide').forEach((div: any) => {
+    this.document.querySelectorAll('.slide').forEach((div: HTMLElement) => {
       this.slidesPositions.push([div.offsetLeft, div.offsetLeft + div.offsetWidth]);
     });
 
@@ -45,7 +46,7 @@ export class SwiperComponent implements AfterViewInit {
       this.currentItem = this.slidesPositions.length - 1;
     }
 
-    document.querySelector('.slider').scrollTo({
+    this.document.querySelector('.slider').scrollTo({
       left: this.slidesPositions[this.currentItem][0],
       behavior: 'smooth'
     });
