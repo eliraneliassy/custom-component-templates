@@ -1,4 +1,4 @@
-import { Component, TemplateRef, Input, Output, EventEmitter, AfterViewInit, Inject, OnChanges } from '@angular/core';
+import { Component, TemplateRef, Input, Output, EventEmitter, AfterViewInit, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 
@@ -7,7 +7,7 @@ import { DOCUMENT } from '@angular/common';
   templateUrl: './swiper.component.html',
   styleUrls: ['./swiper.component.scss']
 })
-export class SwiperComponent implements AfterViewInit, OnChanges {
+export class SwiperComponent implements AfterViewInit {
 
   index = 0;
   @Input() options;
@@ -23,9 +23,6 @@ export class SwiperComponent implements AfterViewInit, OnChanges {
   };
 
   constructor(@Inject(DOCUMENT) private document: Document) { }
-  ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
-    console.log(changes);
-  }
   ngAfterViewInit(): void {
     this.getSlides();
     console.log(this.options);
