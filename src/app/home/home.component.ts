@@ -8,8 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  slides = slides.map(x => x.imageUrl);
-
   constructor() { }
 
   ngOnInit(): void {
