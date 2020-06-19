@@ -6,13 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './consumer2.component.html',
   styleUrls: ['./consumer2.component.scss']
 })
-export class Consumer2Component implements OnInit {
+export class Consumer2Component  {
 
-  slides = slides;
-  options = slides.map(x => x.num);
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

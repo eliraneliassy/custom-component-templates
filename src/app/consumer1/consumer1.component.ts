@@ -5,13 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './consumer1.component.html',
   styleUrls: ['./consumer1.component.scss']
 })
-export class Consumer1Component implements OnInit {
+export class Consumer1Component {
 
-  numbers = [6, 7, 8, 9, 10];
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
