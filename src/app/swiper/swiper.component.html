@@ -1,10 +1,12 @@
 <div class="swiper">
   <div class="slider">
-    <div class="slide" *ngFor="let slide of slides">
+    <div class="slide" *ngFor="let slide of slides; let i = index">
       <ng-container
         [ngTemplateOutlet]="slidesTemplate || defaultTemplate"
         [ngTemplateOutletContext]="{
-          $implicit: slide
+          $implicit: slide,
+          index: i,
+          navigation: nav
         }"
       ></ng-container>
 

@@ -16,6 +16,11 @@ export class SwiperComponent implements AfterViewInit {
   slidesPositions: any[];
   currentItem = 0;
 
+  nav = {
+    next: () => this.slide(1),
+    prev: () => this.slide(-1)
+  };
+
   constructor(@Inject(DOCUMENT) private document: Document) { }
 
   slide(direction: number) {

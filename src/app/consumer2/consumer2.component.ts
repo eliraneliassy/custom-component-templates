@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <app-swiper [slides]="slides" [slidesTemplate]="slidesTemplate"></app-swiper>
 
-    <ng-template #slidesTemplate let-name>
+    <ng-template #slidesTemplate let-name let-index="index" let-nav="navigation">
         {{name}}
+        <br>
+        Index: {{index}}
+        <br>
+        <button (click)="nav.next()">CLICK HERE TO MOVE NEXT</button>
     <ng-template>
   `,
   styleUrls: ['./consumer2.component.scss']
