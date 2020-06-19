@@ -1,0 +1,10 @@
+<div class="swiper">
+  <div class="slider">
+    <div class="slide" *ngFor="let slide of slides">
+      <img [src]="slide">
+    </div>
+
+    <button class="btn next" (click)="slide(+1)">Next</button>
+    <button class="btn prev" (click)="slide(-1)">Prev</button>
+  </div>
+</div>
