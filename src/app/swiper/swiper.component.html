@@ -1,7 +1,16 @@
 <div class="swiper">
   <div class="slider">
     <div class="slide" *ngFor="let slide of slides">
-      <img [src]="slide">
+      <ng-container
+        [ngTemplateOutlet]="slidesTemplate || defaultTemplate"
+        [ngTemplateOutletContext]="{
+          $implicit: slide
+        }"
+      ></ng-container>
+
+      <ng-template #defaultTemplate>
+        <img [src]="slide" />
+      </ng-template>
     </div>
 
     <button class="btn next" (click)="slide(+1)">Next</button>

@@ -3,7 +3,9 @@ import { slides } from '../consumer2/data';
 
 @Component({
   selector: 'app-consumer1',
-  templateUrl: './consumer1.component.html',
+  template: `
+    <app-swiper [slides]="slides"></app-swiper>
+  `,
   styleUrls: ['./consumer1.component.scss']
 })
 export class Consumer1Component {

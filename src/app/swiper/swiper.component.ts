@@ -10,6 +10,8 @@ import { DOCUMENT } from '@angular/common';
 export class SwiperComponent implements AfterViewInit {
 
   @Input() slides: string[];
+  @Input() slidesTemplate: TemplateRef<any>;
+
 
   slidesPositions: any[];
   currentItem = 0;
