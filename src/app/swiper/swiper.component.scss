@@ -1,19 +1,16 @@
 .swiper {
-  overflow-y: hidden;
   position: relative;
   .slider {
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    div {
+    .slide {
       min-width: 100vw;
       height: 500px;
       scroll-snap-align: start;
-      text-align: center;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 30px;
     }
   }
 
@@ -22,11 +19,11 @@
     top: 250px;
 
     &.prev {
-      left: 0;
+      left: 30px;
     }
 
     &.next {
-      right: 0;
+      right: 30px;
     }
   }
 }

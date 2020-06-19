@@ -1,23 +1,21 @@
 <div class="swiper">
   <div class="slider">
-    <div *ngFor="let item of options; let i = index" class="slide">
-      <ng-template #defaultTemplate>
-        {{ item }}
-      </ng-template>
-
+    <div class="slide" *ngFor="let slide of slides; let i = index">
       <ng-container
         [ngTemplateOutlet]="slidesTemplate || defaultTemplate"
-        [ngTemplateOutletContext]="
-        {
-            $implicit: item,
-            index: i,
-            navigation: nav
-        }
-        "
+        [ngTemplateOutletContext]="{
+          $implicit: slide,
+          index: i,
+          navigation: nav
+        }"
       ></ng-container>
-    </div>
-  </div>
 
-  <button class="btn next" (click)="next()">Next</button>
-  <button class="btn prev" (click)="prev()">Prev</button>
+      <ng-template #defaultTemplate>
+        <img [src]="slide" />
+      </ng-template>
+    </div>
+
+    <button class="btn next" (click)="slide(+1)">Next</button>
+    <button class="btn prev" (click)="slide(-1)">Prev</button>
+  </div>
 </div>

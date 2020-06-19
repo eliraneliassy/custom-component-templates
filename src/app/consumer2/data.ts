@@ -13,3 +13,7 @@ export const slides = [
     }
 
 ];
+
+export const slides2 = [
+    'Eliran', 'Ron', 'Itay', 'Shai'
+];

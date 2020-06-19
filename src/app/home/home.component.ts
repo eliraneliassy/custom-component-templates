@@ -1,3 +1,4 @@
+import { slides } from './../consumer2/data';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

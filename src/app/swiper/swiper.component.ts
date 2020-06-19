@@ -9,57 +9,42 @@ import { DOCUMENT } from '@angular/common';
 })
 export class SwiperComponent implements AfterViewInit {
 
-  index = 0;
-  @Input() options;
+  @Input() slides: string[];
   @Input() slidesTemplate: TemplateRef<any>;
-  @Output() slideClicked: EventEmitter<number> = new EventEmitter<number>();
 
-  private slidesPositions: any[];
-  private currentItem = 0;
+
+  slidesPositions: any[];
+  currentItem = 0;
 
   nav = {
-    next: () => this.next(),
-    prev: () => this.prev()
+    next: () => this.slide(1),
+    prev: () => this.slide(-1)
   };
 
   constructor(@Inject(DOCUMENT) private document: Document) { }
-  ngAfterViewInit(): void {
-    this.getSlides();
-    console.log(this.options);
-  }
 
-  getSlides() {
-    this.slidesPositions = [];
-    this.document.querySelectorAll('.slide').forEach((div: HTMLElement) => {
-      this.slidesPositions.push([div.offsetLeft, div.offsetLeft + div.offsetWidth]);
-    });
+  slide(direction: number) {
+    this.currentItem += direction;
 
-  }
-
-  slide(num: number) {
-    this.currentItem += num;
-
-    if (this.currentItem > this.slidesPositions.length - 1) {
-      this.currentItem = 0;
-    }
-
-    if (this.currentItem < 0) {
-      this.currentItem = this.slidesPositions.length - 1;
-    }
+    if (this.currentItem > this.slidesPositions.length - 1) { this.currentItem = 0; }
+    if (this.currentItem < 0) { this.currentItem = this.slidesPositions.length - 1; }
 
     this.document.querySelector('.slider').scrollTo({
-      left: this.slidesPositions[this.currentItem][0],
+      left: this.slidesPositions[this.currentItem],
       behavior: 'smooth'
     });
-
   }
 
-  prev() {
-    this.slide(-1);
+  ngAfterViewInit(): void {
+    this.getSlidesPositions();
   }
 
-  next() {
-    this.slide(1);
+  getSlidesPositions() {
+    this.slidesPositions = [];
+    this.document.querySelectorAll('.slide').forEach((div: HTMLElement) => {
+      this.slidesPositions.push(div.offsetLeft);
+    });
+
   }
 
 }
