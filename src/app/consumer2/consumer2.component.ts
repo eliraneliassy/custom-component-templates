@@ -1,4 +1,4 @@
-import { slides } from './data';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

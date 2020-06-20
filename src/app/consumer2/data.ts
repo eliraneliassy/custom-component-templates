@@ -1,4 +1,4 @@
-export const slides = [
+export const imageList = [
     {
         num: 1,
         imageUrl: 'https://lh5.googleusercontent.com/proxy/t4bXQKCU3IHZGoeMjvGA8yls6oMw_5xNoIvrlKEortAnvYjLUo__qLpYl1nJJW2gRQg2DD-P3hiN3kk9D_HA-AV9m0BaKxPGKb2PUtDgiPrsCL5_QFNq0hOqmL72YKYZYEMoO0ioIIRqtzIzWaynXZ4OUXBHMfg29JnxmPH_VivNoqkhSGpoE1m_LeUrmQ6ukhs5aH5IiDIL0LHFLWNYlhg0KXjyduNeO3_TeFJH0_lyDqo=s1920-w1920-h1080-fcrop64=1,00001999fffff3c7-k-no-nd-mv'
@@ -13,3 +13,7 @@ export const slides = [
     }
 
 ];
+
+export const speakerList = ['Eliran', 'Minko', 'Shai'];
+
+
